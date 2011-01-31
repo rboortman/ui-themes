@@ -27,23 +27,53 @@
         </section>
 
         <section id="text-box" class="element">
+          <label for="search">Search</label>
+          <input type="search" placeholder="Search" results="0" id="search">
+        </section>
+
+        <section id="text-box" class="element">
+          <label for="date">Date</label>
+          <input type="date" min="2011-01-30" max="2011-08-14" value="2011-01-13"/>
+        </section>
+
+        <section id="text-box" class="element">
+          <label for="tel">Tel</label>
+          <input type="tel"  placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" />
+        </section>
+
+        <section id="text-box" class="element">
+          <label for="number">Number</label>
+          <input type="number" step="1" min="-5" max="10" value="0" />
+        </section>
+
+        <section id="text-box" class="element">
           <label for="checkbox">Checkbox</label>
           <input type="checkbox" name="checkbox">
-          <input type="checkbox" name="checkbox">
-          <input type="checkbox" name="checkbox">
+          <input type="checkbox" name="checkbox" checked>
         </section>
 
         <section id="text-box" class="element">
           <label for="radio">Radio</label>
           <input type="radio" name="group" value="One">
-          <input type="radio" name="group" value="Two">
-          <input type="radio" name="group" value="Three">
+          <input type="radio" name="group" value="Two" checked>
+          <input type="radio" name="group" value="Three" disabled>
         </section>
 
         <section id="text-box" class="element">
           <label for="file">File</label>
           <input type="file" id="file" placeholder="testing">
         </section>
+
+        <section id="text-box" class="element">
+          <label for="progress">Progress</label>
+          <progress>working...</progress>
+        </section>
+
+        <section id="text-box" class="element">
+          <label for="meter">Meter</label>
+          <meter min="0" max="100" low="40" high="90" optimum="100" value="91">A+</meter>
+        </section>
+
 
         <section id="text-box" class="element">
           <label for="select">Select</label>
@@ -56,6 +86,12 @@
         </section>
 
         <section id="text-box" class="element">
+          <label for="range">Range</label>
+          <input type="range" min="0" max="10" step="0.1" value="3" id="range">
+        </section>
+
+        <section id="text-box" class="element">
+          <label for="button">Button</label>
           <button>Button</button>
         </section>
       </form>
