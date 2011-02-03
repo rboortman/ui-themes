@@ -245,7 +245,7 @@ select {
   }
 }
 
-/* button */
+/* minimal button */
 /******************************************************************************/
 @mixin minimal-button ($base-lightness) {
   $start-gradient: hsl(0, 0, $base-lightness);
@@ -284,14 +284,66 @@ select {
   }
 }
 
+/* simple color */
+/******************************************************************************/
+@mixin simple-color ($base-hue, $base-saturation, $base-lightness) {
+  $start-gradient: hsl($base-hue, $base-saturation, $base-lightness);
+  $stop-gradient: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 11%), 9%);
+  $border: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 11%), 9%);
+  $inset-shadow: desaturate(lighten(hsl($base-hue, $base-saturation, $base-lightness), 8%), 8%);
+  $text-shadow: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 18%), 15%);
+  $color: hsl(0, 0, 100%);
+
+  @if $base-lightness > 70% {
+    $color: hsl(0, 0, 20%);
+    $text-shadow: saturate(lighten(hsl($base-hue, $base-saturation, $base-lightness), 4%), 10%);
+  }
+
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start-gradient), to($stop-gradient));
+  border: 1px solid $border;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 0 0 $inset-shadow;
+  color: $color;
+  font-weight: bold;
+  padding: 8px;
+  text-shadow: 0 1px 0 $text-shadow;
+  width: 150px;
+}
+
+@mixin simple-color-hover ($base-hue, $base-saturation, $base-lightness) {
+  @include simple-color($base-hue, $base-saturation, $base-lightness);
+
+  $start-gradient: desaturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 3%), 4%);
+  $stop-gradient: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 12%), 8%);
+  $inset-shadow: desaturate(lighten(hsl($base-hue, $base-saturation, $base-lightness), 5%), 7%);
+
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start-gradient), to($stop-gradient));
+  -webkit-box-shadow: inset 0 1px 0 0 $inset-shadow;
+  cursor: pointer;
+}
+
+@mixin simple-color-active ($base-hue, $base-saturation, $base-lightness) {
+  @include simple-color($base-hue, $base-saturation, $base-lightness);
+
+  $border: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 14%), 9%);
+  $inset-shadow: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 17%), 7%);
+
+  border: 1px solid $border;
+  -webkit-box-shadow: inset 0 0 8px 4px $inset-shadow, 0 1px 0 0 #eee;
+}
+
 button {
-  @include minimal-button (93%);
+  $hue: 0;
+  $saturation: 80;
+  $lightness: 60;
+
+  @include simple-color ($hue, $saturation, $lightness);
 
   &:hover {
-    @include minimal-button-hover(93%);
+    @include simple-color-hover ($hue, $saturation, $lightness);
   }
 
   &:active {
-    @include minimal-button-active(93%);
+    @include simple-color-active ($hue, $saturation, $lightness);
   }
 }

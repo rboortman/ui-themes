@@ -216,56 +216,42 @@ select {
   select:hover {
     cursor: pointer; }
 
-/* button */
+/* minimal button */
+/******************************************************************************/
+/* simple color */
 /******************************************************************************/
 button {
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ededed), to(#dbdbdb));
-  border: 1px solid #cccccc;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eb4747), to(#ec0e0e));
+  border: 1px solid #ec0e0e;
   border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #ededed;
-  color: #454545;
+  -webkit-box-shadow: inset 0 1px 0 0 #e87373;
+  color: white;
   font-weight: bold;
   padding: 8px;
-  text-shadow: 0 1px 0 white;
+  text-shadow: 0 1px 0 #d10505;
   width: 150px; }
   button:hover {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ededed), to(#dbdbdb));
-    border: 1px solid #cccccc;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eb4747), to(#ec0e0e));
+    border: 1px solid #ec0e0e;
     border-radius: 3px;
-    -webkit-box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #ededed;
-    color: #454545;
+    -webkit-box-shadow: inset 0 1px 0 0 #e87373;
+    color: white;
     font-weight: bold;
     padding: 8px;
-    text-shadow: 0 1px 0 white;
-    width: 150px; }
-    button:hover:hover {
-      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#d4d4d4));
-      border: 1px solid #c4c4c4;
-      border-radius: 3px;
-      -webkit-box-shadow: inset 0 1px 0 0 #f7f7f7, 0 1px 0 0 #e6e6e6;
-      color: #3d3d3d;
-      font-weight: bold;
-      padding: 8px;
-      text-shadow: 0 1px 0 #f7f7f7;
-      width: 150px;
-      cursor: pointer; }
+    text-shadow: 0 1px 0 #d10505;
+    width: 150px;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e53e3e), to(#e60f0f));
+    -webkit-box-shadow: inset 0 1px 0 0 #e76565;
+    cursor: pointer; }
   button:active {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ededed), to(#dbdbdb));
-    border: 1px solid #cccccc;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eb4747), to(#ec0e0e));
+    border: 1px solid #ec0e0e;
     border-radius: 3px;
-    -webkit-box-shadow: inset 0 1px 0 0 white, 0 1px 0 0 #ededed;
-    color: #454545;
+    -webkit-box-shadow: inset 0 1px 0 0 #e87373;
+    color: white;
     font-weight: bold;
     padding: 8px;
-    text-shadow: 0 1px 0 white;
-    width: 150px; }
-    button:active:active {
-      background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#dedede), to(#cccccc));
-      border: 1px solid #bdbdbd;
-      border-radius: 3px;
-      -webkit-box-shadow: inset 0 1px 0 0 #f0f0f0, 0 1px 0 0 #dedede;
-      color: #363636;
-      font-weight: bold;
-      padding: 8px;
-      text-shadow: 0 1px 0 #f0f0f0;
-      width: 150px; }
+    text-shadow: 0 1px 0 #d10505;
+    width: 150px;
+    border: 1px solid #de0d0d;
+    -webkit-box-shadow: inset 0 0 8px 4px #cd0e0e, 0 1px 0 0 #eeeeee; }
