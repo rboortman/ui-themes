@@ -221,37 +221,37 @@ select {
 /* simple color */
 /******************************************************************************/
 button {
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eb4747), to(#ec0e0e));
-  border: 1px solid #ec0e0e;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ed5e5e), to(#f22121));
+  border: 1px solid #f22121;
   border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px 0 0 #e87373;
+  -webkit-box-shadow: inset 0 1px 0 0 #ec8989;
   color: white;
   font-weight: bold;
   padding: 8px;
-  text-shadow: 0 1px 0 #d10505;
+  text-shadow: 0 1px 0 #ea0606;
   width: 150px; }
   button:hover {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eb4747), to(#ec0e0e));
-    border: 1px solid #ec0e0e;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ed5e5e), to(#f22121));
+    border: 1px solid #f22121;
     border-radius: 3px;
-    -webkit-box-shadow: inset 0 1px 0 0 #e87373;
+    -webkit-box-shadow: inset 0 1px 0 0 #ec8989;
     color: white;
     font-weight: bold;
     padding: 8px;
-    text-shadow: 0 1px 0 #d10505;
+    text-shadow: 0 1px 0 #ea0606;
     width: 150px;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e53e3e), to(#e60f0f));
-    -webkit-box-shadow: inset 0 1px 0 0 #e76565;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e85454), to(#f11e1e));
+    -webkit-box-shadow: inset 0 1px 0 0 #ea7b7b;
     cursor: pointer; }
   button:active {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eb4747), to(#ec0e0e));
-    border: 1px solid #ec0e0e;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ed5e5e), to(#f22121));
+    border: 1px solid #f22121;
     border-radius: 3px;
-    -webkit-box-shadow: inset 0 1px 0 0 #e87373;
+    -webkit-box-shadow: inset 0 1px 0 0 #ec8989;
     color: white;
     font-weight: bold;
     padding: 8px;
-    text-shadow: 0 1px 0 #d10505;
+    text-shadow: 0 1px 0 #ea0606;
     width: 150px;
-    border: 1px solid #de0d0d;
-    -webkit-box-shadow: inset 0 0 8px 4px #cd0e0e, 0 1px 0 0 #eeeeee; }
+    border: 1px solid #f11313;
+    -webkit-box-shadow: inset 0 0 8px 4px #e51010, 0 1px 0 0 #eeeeee; }

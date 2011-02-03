@@ -335,7 +335,7 @@ select {
 button {
   $hue: 0;
   $saturation: 80;
-  $lightness: 60;
+  $lightness: 65;
 
   @include simple-color ($hue, $saturation, $lightness);
 
