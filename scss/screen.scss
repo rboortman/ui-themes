@@ -231,13 +231,13 @@ input[type="file"] {
 /* select */
 /******************************************************************************/
 select {
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#ddd));
-  border: 1px solid #ccc;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(hsl(0, 0, 93%)), to(hsl(0, 0, 86%)));
+  border: 1px solid hsl(0, 0, 80%);
   border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px 0 0 #fff, 0 1px 0 0 #efefef;
-  color: #555;
+  -webkit-box-shadow: inset 0 1px 0 0 hsl(0, 0, 100%), 0 1px 0 0 hsl(0, 0, 93%);
+  color: hsl(0, 0, 33%);
   padding: 8px;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 hsl(0, 0, 100%);
   width: 150px;
 
   &:hover {
@@ -247,29 +247,51 @@ select {
 
 /* button */
 /******************************************************************************/
-button {
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#ddd));
-  border: 1px solid #ccc;
+@mixin minimal-button ($base-lightness) {
+  $start-gradient: hsl(0, 0, $base-lightness);
+  $stop-gradient: darken(hsl(0, 0, $base-lightness), 7%);
+  $border: darken(hsl(0, 0, $base-lightness), 13%);
+  $inset-shadow: lighten(hsl(0, 0, $base-lightness), 7%);
+  $drop-shadow: hsl(0, 0, $base-lightness);
+  $text-shadow: lighten(hsl(0, 0, $base-lightness), 7%);
+  $color: darken(hsl(0, 0, $base-lightness), 66%);
+
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start-gradient), to($stop-gradient));
+  border: 1px solid $border;
   border-radius: 3px;
-  -webkit-box-shadow: inset 0 1px 0 0 #fff, 0 1px 0 0 #efefef;
-  color: #555;
+  -webkit-box-shadow: inset 0 1px 0 0 $inset-shadow, 0 1px 0 0 $drop-shadow;
+  color: $color;
   font-weight: bold;
   padding: 8px;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 $text-shadow;
   width: 150px;
+}
+
+@mixin minimal-button-hover($base-lightness) {
+  @include minimal-button($base-lightness);
 
   &:hover {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e6e6e6), to(#d6d6d6));
-    border: 1px solid #c6c6c6;
-    -webkit-box-shadow: inset 0 1px 0 0 #f6f6f6, 0 1px 0 0 #efefef;
+    @include minimal-button($base-lightness - 3%);
     cursor: pointer;
-    text-shadow: 0 1px 0 #f6f6f6;
+  }
+}
+
+@mixin minimal-button-active($base-lightness) {
+  @include minimal-button($base-lightness);
+
+  &:active {
+    @include minimal-button($base-lightness - 6%)
+  }
+}
+
+button {
+  @include minimal-button (93%);
+
+  &:hover {
+    @include minimal-button-hover(93%);
   }
 
   &:active {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e0e0e0), to(#d0d0d0));
-    border: 1px solid #c0c0c0;
-    -webkit-box-shadow: inset 0 1px 0 0 #f0f0f0, 0 1px 0 0 #f6f6f6;
-    text-shadow: 0 1px 0 #f0f0f0;
+    @include minimal-button-active(93%);
   }
 }
