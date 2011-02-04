@@ -247,7 +247,7 @@ select {
 
 /* minimal button */
 /******************************************************************************/
-@mixin minimal-button ($base-lightness) {
+@mixin minimal-button ($base-hue, $base-saturation, $base-lightness) {
   $start-gradient: hsl(0, 0, $base-lightness);
   $stop-gradient: darken(hsl(0, 0, $base-lightness), 7%);
   $border: darken(hsl(0, 0, $base-lightness), 13%);
@@ -265,22 +265,20 @@ select {
   padding: 8px;
   text-shadow: 0 1px 0 $text-shadow;
   width: 150px;
-}
-
-@mixin minimal-button-hover($base-lightness) {
-  @include minimal-button($base-lightness);
 
   &:hover {
-    @include minimal-button($base-lightness - 3%);
+    $start-gradient: darken(hsl(0, 0, $base-lightness), 3%);
+    $stop-gradient: darken(hsl(0, 0, $base-lightness), 10%);
+
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start-gradient), to($stop-gradient));
     cursor: pointer;
   }
-}
-
-@mixin minimal-button-active($base-lightness) {
-  @include minimal-button($base-lightness);
 
   &:active {
-    @include minimal-button($base-lightness - 6%)
+    $start-gradient: darken(hsl(0, 0, $base-lightness), 6%);
+    $stop-gradient: darken(hsl(0, 0, $base-lightness), 13%);
+
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start-gradient), to($stop-gradient));
   }
 }
 
@@ -289,8 +287,8 @@ select {
 @mixin simple-color ($base-hue, $base-saturation, $base-lightness) {
   $start-gradient: hsl($base-hue, $base-saturation, $base-lightness);
   $stop-gradient: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 11%), 9%);
-  $border: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 11%), 9%);
-  $inset-shadow: desaturate(lighten(hsl($base-hue, $base-saturation, $base-lightness), 8%), 8%);
+  $border: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 12%), 9%);
+  $inset-shadow: desaturate(lighten(hsl($base-hue, $base-saturation, $base-lightness), 10%), 8%);
   $text-shadow: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 18%), 15%);
   $color: hsl(0, 0, 100%);
 
@@ -308,42 +306,30 @@ select {
   padding: 8px;
   text-shadow: 0 1px 0 $text-shadow;
   width: 150px;
-}
-
-@mixin simple-color-hover ($base-hue, $base-saturation, $base-lightness) {
-  @include simple-color($base-hue, $base-saturation, $base-lightness);
-
-  $start-gradient: desaturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 3%), 4%);
-  $stop-gradient: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 12%), 8%);
-  $inset-shadow: desaturate(lighten(hsl($base-hue, $base-saturation, $base-lightness), 5%), 7%);
-
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start-gradient), to($stop-gradient));
-  -webkit-box-shadow: inset 0 1px 0 0 $inset-shadow;
-  cursor: pointer;
-}
-
-@mixin simple-color-active ($base-hue, $base-saturation, $base-lightness) {
-  @include simple-color($base-hue, $base-saturation, $base-lightness);
-
-  $border: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 14%), 9%);
-  $inset-shadow: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 17%), 7%);
-
-  border: 1px solid $border;
-  -webkit-box-shadow: inset 0 0 8px 4px $inset-shadow, 0 1px 0 0 #eee;
-}
-
-button {
-  $hue: 0;
-  $saturation: 80;
-  $lightness: 65;
-
-  @include simple-color ($hue, $saturation, $lightness);
 
   &:hover {
-    @include simple-color-hover ($hue, $saturation, $lightness);
+    $start-gradient: desaturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 3%), 4%);
+    $stop-gradient: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 12%), 8%);
+    $inset-shadow: desaturate(lighten(hsl($base-hue, $base-saturation, $base-lightness), 5%), 7%);
+
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start-gradient), to($stop-gradient));
+    -webkit-box-shadow: inset 0 1px 0 0 $inset-shadow;
+    cursor: pointer;
   }
 
   &:active {
-    @include simple-color-active ($hue, $saturation, $lightness);
+    $border: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 14%), 9%);
+    $inset-shadow: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 17%), 7%);
+
+    border: 1px solid $border;
+    -webkit-box-shadow: inset 0 0 8px 4px $inset-shadow, 0 1px 0 0 #eee;
   }
+}
+
+button {
+  $hue: 200;
+  $saturation: 80;
+  $lightness: 50;
+
+  @include simple-color ($hue, $saturation, $lightness);
 }
