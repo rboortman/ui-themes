@@ -221,19 +221,35 @@ select {
 /* simple color */
 /******************************************************************************/
 button {
-  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#19a1e6), to(#0b81bc));
+  background: #19a1e6;
+  background: -moz-linear-gradient(top, #19a1e6, #0b81bc);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #19a1e6), color-stop(1, #0b81bc));
   border: 1px solid #0b7eb7;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
   border-radius: 3px;
+  -moz-box-shadow: inset 0 1px 0 0 #50b1e2;
+  -o-box-shadow: inset 0 1px 0 0 #50b1e2;
   -webkit-box-shadow: inset 0 1px 0 0 #50b1e2;
+  box-shadow: inset 0 1px 0 0 #50b1e2;
   color: white;
   font-weight: bold;
   padding: 8px;
   text-shadow: 0 1px 0 #046b9f;
   width: 150px; }
   button:hover {
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1d96d3), to(#0c7db6));
+    background: #1d96d3;
+    background: -moz-linear-gradient(top, #1d96d3, #0c7db6);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1d96d3), color-stop(1, #0c7db6));
+    -moz-box-shadow: inset 0 1px 0 0 #38a8e0;
+    -o-box-shadow: inset 0 1px 0 0 #38a8e0;
     -webkit-box-shadow: inset 0 1px 0 0 #38a8e0;
+    box-shadow: inset 0 1px 0 0 #38a8e0;
     cursor: pointer; }
   button:active {
     border: 1px solid #0a77ae;
-    -webkit-box-shadow: inset 0 0 8px 4px #0b6d9d, 0 1px 0 0 #eeeeee; }
+    -moz-box-shadow: inset 0 0 8px 4px #0b6d9d;
+    -o-box-shadow: inset 0 0 8px 4px #0b6d9d;
+    -webkit-box-shadow: inset 0 0 8px 4px #0b6d9d;
+    box-shadow: inset 0 0 8px 4px #0b6d9d;
+    /*-webkit-box-shadow: inset 0 0 8px 4px $inset-shadow, */ }
