@@ -272,7 +272,7 @@ select {
     $start-gradient: darken(hsl(0, 0, $base-lightness), 3%);
     $stop-gradient: darken(hsl(0, 0, $base-lightness), 10%);
 
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start-gradient), to($stop-gradient));
+    @include linear-gradient ($start-gradient, $stop-gradient);
     cursor: pointer;
   }
 
@@ -280,7 +280,7 @@ select {
     $start-gradient: darken(hsl(0, 0, $base-lightness), 6%);
     $stop-gradient: darken(hsl(0, 0, $base-lightness), 13%);
 
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($start-gradient), to($stop-gradient));
+    @include linear-gradient ($start-gradient, $stop-gradient);
   }
 }
 
@@ -323,9 +323,8 @@ select {
     $border: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 14%), 9%);
     $inset-shadow: saturate(darken(hsl($base-hue, $base-saturation, $base-lightness), 17%), 7%);
 
+    @include box-shadow (inset 0 0 8px 4px $inset-shadow, inset 0 0 8px 4px $inset-shadow, 0 1px 1px 0 #eee);
     border: 1px solid $border;
-    @include box-shadow (inset 0 0 8px 4px $inset-shadow, inset 0 0 8px 4px $inset-shadow);
-    /*-webkit-box-shadow: inset 0 0 8px 4px $inset-shadow, */
   }
 }
 
