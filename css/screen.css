@@ -1,5 +1,45 @@
-/* this is courtesy of gbbowers on github
-   https://gist.github.com/601810 */
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fade-in {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-webkit-keyframes fade-out {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@-moz-keyframes fade-out {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
+@keyframes fade-out {
+  0% {
+    opacity: 1; }
+
+  100% {
+    opacity: 0; } }
+
 /* define theme style */
 /******************************************************************************/
 /* page elements */
@@ -223,34 +263,49 @@ select {
 /* simple color */
 /******************************************************************************/
 button {
-  background: #19a1e6;
-  background: -moz-linear-gradient(top, #19a1e6, #0b81bc);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #19a1e6), color-stop(1, #0b81bc));
+  background-color: #19a1e6;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#19a1e6), to(#0b81bc));
+  /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, compact(#19a1e6, #0b81bc, false, false, false, false, false, false, false, false));
+  background-image: -moz-linear-gradient(top, compact(#19a1e6, #0b81bc, false, false, false, false, false, false, false, false));
+  background-image: -ms-linear-gradient(top, compact(#19a1e6, #0b81bc, false, false, false, false, false, false, false, false));
+  background-image: -o-linear-gradient(top, compact(#19a1e6, #0b81bc, false, false, false, false, false, false, false, false));
+  background-image: linear-gradient(top, compact(#19a1e6, #0b81bc, false, false, false, false, false, false, false, false));
   border: 1px solid #0b7eb7;
-  -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
   border-radius: 3px;
-  -moz-box-shadow: inset 0 1px 0 0 #50b1e2;
-  -webkit-box-shadow: inset 0 1px 0 0 #50b1e2;
-  -o-box-shadow: inset 0 1px 0 0 #50b1e2;
-  box-shadow: inset 0 1px 0 0 #50b1e2;
+  -webkit-box-shadow: compact(inset 0 1px 0 0 #50b1e2, false, false, false, false, false, false, false, false);
+  -moz-box-shadow: compact(inset 0 1px 0 0 #50b1e2, false, false, false, false, false, false, false, false);
+  -ms-box-shadow: compact(inset 0 1px 0 0 #50b1e2, false, false, false, false, false, false, false, false);
+  -o-box-shadow: compact(inset 0 1px 0 0 #50b1e2, false, false, false, false, false, false, false, false);
+  box-shadow: compact(inset 0 1px 0 0 #50b1e2, false, false, false, false, false, false, false, false);
   color: white;
   font-weight: bold;
   padding: 8px;
   text-shadow: 0 1px 0 #046b9f;
   width: 150px; }
   button:hover {
-    background: #1d96d3;
-    background: -moz-linear-gradient(top, #1d96d3, #0c7db6);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #1d96d3), color-stop(1, #0c7db6));
-    -moz-box-shadow: inset 0 1px 0 0 #38a8e0;
-    -webkit-box-shadow: inset 0 1px 0 0 #38a8e0;
-    -o-box-shadow: inset 0 1px 0 0 #38a8e0;
-    box-shadow: inset 0 1px 0 0 #38a8e0;
+    background-color: #1d96d3;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#1d96d3), to(#0c7db6));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, compact(#1d96d3, #0c7db6, false, false, false, false, false, false, false, false));
+    background-image: -moz-linear-gradient(top, compact(#1d96d3, #0c7db6, false, false, false, false, false, false, false, false));
+    background-image: -ms-linear-gradient(top, compact(#1d96d3, #0c7db6, false, false, false, false, false, false, false, false));
+    background-image: -o-linear-gradient(top, compact(#1d96d3, #0c7db6, false, false, false, false, false, false, false, false));
+    background-image: linear-gradient(top, compact(#1d96d3, #0c7db6, false, false, false, false, false, false, false, false));
+    -webkit-box-shadow: compact(inset 0 1px 0 0 #38a8e0, false, false, false, false, false, false, false, false);
+    -moz-box-shadow: compact(inset 0 1px 0 0 #38a8e0, false, false, false, false, false, false, false, false);
+    -ms-box-shadow: compact(inset 0 1px 0 0 #38a8e0, false, false, false, false, false, false, false, false);
+    -o-box-shadow: compact(inset 0 1px 0 0 #38a8e0, false, false, false, false, false, false, false, false);
+    box-shadow: compact(inset 0 1px 0 0 #38a8e0, false, false, false, false, false, false, false, false);
     cursor: pointer; }
   button:active {
-    -moz-box-shadow: inset 0 0 8px 4px #0b6d9d, inset 0 0 8px 4px #0b6d9d, 0 1px 1px 0 #eeeeee;
-    -webkit-box-shadow: inset 0 0 8px 4px #0b6d9d, inset 0 0 8px 4px #0b6d9d, 0 1px 1px 0 #eeeeee;
-    -o-box-shadow: inset 0 0 8px 4px #0b6d9d, inset 0 0 8px 4px #0b6d9d, 0 1px 1px 0 #eeeeee;
-    box-shadow: inset 0 0 8px 4px #0b6d9d, inset 0 0 8px 4px #0b6d9d, 0 1px 1px 0 #eeeeee;
+    -webkit-box-shadow: compact(inset 0 0 8px 4px #0b6d9d, inset 0 0 8px 4px #0b6d9d, 0 1px 1px 0 #eeeeee, false, false, false, false, false, false);
+    -moz-box-shadow: compact(inset 0 0 8px 4px #0b6d9d, inset 0 0 8px 4px #0b6d9d, 0 1px 1px 0 #eeeeee, false, false, false, false, false, false);
+    -ms-box-shadow: compact(inset 0 0 8px 4px #0b6d9d, inset 0 0 8px 4px #0b6d9d, 0 1px 1px 0 #eeeeee, false, false, false, false, false, false);
+    -o-box-shadow: compact(inset 0 0 8px 4px #0b6d9d, inset 0 0 8px 4px #0b6d9d, 0 1px 1px 0 #eeeeee, false, false, false, false, false, false);
+    box-shadow: compact(inset 0 0 8px 4px #0b6d9d, inset 0 0 8px 4px #0b6d9d, 0 1px 1px 0 #eeeeee, false, false, false, false, false, false);
     border: 1px solid #0a77ae; }
